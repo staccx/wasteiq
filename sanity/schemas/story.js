@@ -4,11 +4,6 @@ export default {
   title: "Story box",
   fields: [
     {
-      type: "color",
-      name: "color",
-      title: "Color"
-    },
-    {
       type: "string",
       name: "title",
       title: "Title"
@@ -17,6 +12,16 @@ export default {
       type: "text",
       name: "lede",
       title: "Lede"
+    },
+    {
+      type: "color",
+      name: "color",
+      title: "Color"
+    },
+    {
+      type: "icon",
+      name: "icon",
+      title: "Icon"
     },
     {
       type: "object",
