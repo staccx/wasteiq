@@ -18,6 +18,54 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/page.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/blockContent.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/richText.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/story.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/hero.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/colorSelect.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/buttons/buttonLink.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/buttons/buttonPageLink.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/featuresList.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/features.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/callToAction.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/fullWidthContainer.js"
     }
   ]
 }
