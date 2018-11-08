@@ -22,11 +22,20 @@ const Header = () => {
           return (
             <div>
               <MenuItems>
-                {document.menuItems.map(item => (
-                  <StyledLink to={item.link.path.current} key={item._key}>
-                    {item.label}
-                  </StyledLink>
-                ))}
+                {document.menuItems.map(item => {
+                  if (item._type === "menuItemOutbound") {
+                    return (
+                      <StyledLink href={item.link} key={item._key} as="a">
+                        {item.label}
+                      </StyledLink>
+                    )
+                  }
+                  return (
+                    <StyledLink to={item.link.path.current} key={item._key}>
+                      {item.label}
+                    </StyledLink>
+                  )
+                })}
               </MenuItems>
             </div>
           )

@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { Layout, LayoutItem, Box, ThemeComponent } from "@staccx/base"
+import { SanityDocument } from "@staccx/sanity"
+import { Layout, LayoutItem, Box, ThemeComponent, theming } from "@staccx/base"
 
 const Footer = () => {
   return (
@@ -13,9 +14,46 @@ const Footer = () => {
         variant={"page"}
       >
         <LayoutItem area={"main"}>
-          <LogoLink to={"/"}>
-            <ThemeComponent tagName={"Logo"} inverted />
-          </LogoLink>
+          <FooterContent>
+            <LogoLink to={"/"}>
+              <ThemeComponent tagName={"Logo"} inverted />
+            </LogoLink>
+
+            <SanityDocument
+              id={"611a7937-1cdd-4701-8ee0-b516344cf838"}
+              pick={"menuItems[]{link->{path},...}"}
+            >
+              {({ document }) => {
+                if (!document) {
+                  return null
+                }
+
+                return (
+                  <div>
+                    <MenuItems>
+                      {document.menuItems.map(item => {
+                        if (item._type === "menuItemOutbound") {
+                          return (
+                            <StyledLink href={item.link} key={item._key} as="a">
+                              {item.label}
+                            </StyledLink>
+                          )
+                        }
+                        return (
+                          <StyledLink
+                            to={item.link.path.current}
+                            key={item._key}
+                          >
+                            {item.label}
+                          </StyledLink>
+                        )
+                      })}
+                    </MenuItems>
+                  </div>
+                )
+              }}
+            </SanityDocument>
+          </FooterContent>
         </LayoutItem>
       </Layout>
     </Box>
@@ -25,6 +63,31 @@ const Footer = () => {
 const LogoLink = styled(Link)`
   display: block;
   max-width: 168px;
+`
+
+const MenuItems = styled.div`
+  display: table;
+
+  > *:not(:first-child) {
+    margin-left: ${theming.spacing.medium};
+  }
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${theming.color.white};
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 3px solid ${theming.color("pink")};
+  }
+`
+
+const FooterContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: ${theming.spacing("gridSmall")} 0;
 `
 
 export default Footer
