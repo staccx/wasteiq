@@ -31,9 +31,13 @@ export const BoxVariants = theming.createVariants(
     story: css`
       position: relative;
 
-      @media (max-width: ${theming.wrapper("medium")}) {
-        padding-bottom: 25vh;
-      }
+      ${p =>
+        p.hasIcon &&
+        css`
+          @media (max-width: ${theming.wrapper("medium")}) {
+            padding-bottom: 25vh;
+          }
+        `};
     `
   },
   Box.themeProps.box

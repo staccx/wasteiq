@@ -16,6 +16,7 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
   return (
     <Box
       variant={[theming.VARIANT_DEFAULT, "story"]}
+      hasIcon={!!icon}
       color={color}
       as={"article"}
       size={"medium"}

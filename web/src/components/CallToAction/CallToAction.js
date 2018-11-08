@@ -26,6 +26,7 @@ const CallToAction = ({
       color={color}
       as={"article"}
       size={"medium"}
+      hasIcon={!!icon}
       variant={[theming.VARIANT_DEFAULT, "story"]}
     >
       <Layout rowGap={"large"}>
