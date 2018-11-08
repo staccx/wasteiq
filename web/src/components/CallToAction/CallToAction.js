@@ -80,7 +80,7 @@ const IconContainer = styled.div`
 
     > * {
       position: absolute;
-      bottom: 0;
+      bottom: -${theming.spacing.large};
       left: -${theming.spacing.large};
     }
   }

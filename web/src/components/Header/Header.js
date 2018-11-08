@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { SanityDocument } from "@staccx/sanity"
 import { ThemeComponent, theming } from "@staccx/base"
 
 const Header = () => {
@@ -9,7 +10,28 @@ const Header = () => {
       <LogoLink to={"/"}>
         <ThemeComponent tagName={"Logo"} />
       </LogoLink>
-      <div>MenuItems go here</div>
+      <SanityDocument
+        id={"094f74ea-cf50-4b87-9ca7-34580eb0287e"}
+        pick={"menuItems[]{link->{path},...}"}
+      >
+        {({ document }) => {
+          if (!document) {
+            return null
+          }
+
+          return (
+            <div>
+              <MenuItems>
+                {document.menuItems.map(item => (
+                  <StyledLink to={item.link.path.current} key={item._key}>
+                    {item.label}
+                  </StyledLink>
+                ))}
+              </MenuItems>
+            </div>
+          )
+        }}
+      </SanityDocument>
     </Outer>
   )
 }
@@ -23,6 +45,24 @@ const Outer = styled.div`
 const LogoLink = styled(Link)`
   display: block;
   max-width: 168px;
+`
+
+const MenuItems = styled.div`
+  display: table;
+
+  > *:not(:first-child) {
+    margin-left: ${theming.spacing.medium};
+  }
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 3px solid ${theming.color("pink")};
+  }
 `
 
 export default Header
