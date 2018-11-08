@@ -1,7 +1,7 @@
 import React from "react"
 import { Layout, LayoutItem } from "@staccx/base"
 
-const Page = ({ children }) => {
+const PageLayout = ({ children }) => {
   return (
     <Layout variant="page" columnGap={"flush"}>
       <LayoutItem area={"main"}>{children}</LayoutItem>
@@ -9,4 +9,4 @@ const Page = ({ children }) => {
   )
 }
 
-export default Page
+export default PageLayout

@@ -8,7 +8,7 @@ import { ParagraphVariants } from "./variants/Paragraph.Variants"
 import base from "./globals/base"
 import { IconHalfCircleComponent } from "./icons/Icon.HalfCircle"
 import { IconQuarterCircleComponent } from "./icons/Icon.QuarterCircle"
-import { IconDashComponent } from "./icons/Icon.Dash"
+import { IconDiagonalLineComponent } from "./icons/Icon.DiagonalLine"
 import { DotsPatternComponent } from "./components/Component.DotsPattern"
 import { HeadingVariants } from "./variants/Heading.Variants"
 import { ListVariants } from "./variants/List.Variants"
@@ -60,7 +60,8 @@ const color = {
   pink: "#FF9292",
   pinkLight: "#FFD6D6",
   apricot: "#EF8665",
-  apricotLight: "#FCE7E0"
+  apricotLight: "#FCE7E0",
+  link: "#101010"
 }
 
 const font = {
@@ -73,7 +74,8 @@ const font = {
   h6: "18px",
   base: "18px",
   tiny: "12px",
-  input: "18px"
+  input: "18px",
+  lineHeight: "1.6"
 }
 
 const fontWeight = {
@@ -107,7 +109,11 @@ export default new theming.Theme({
 })
   .add(theming.createGlobal({ resets: theming.cssResets, base })) // Globals
   .add([LogoComponent, DotsPatternComponent]) // Components
-  .add([IconHalfCircleComponent, IconQuarterCircleComponent, IconDashComponent]) // Icons
+  .add([
+    IconHalfCircleComponent,
+    IconQuarterCircleComponent,
+    IconDiagonalLineComponent
+  ]) // Icons
   .add([
     BoxVariants,
     LayoutVariants,

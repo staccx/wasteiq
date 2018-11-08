@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { SanityImage } from "@staccx/sanity"
 import {
   Heading,
   Paragraph,
@@ -9,8 +10,9 @@ import {
   Flag,
   theming
 } from "@staccx/base"
+import getIconColor from "../../utils/getIconColor"
 
-const Story = ({ color, icon, iconColor }) => {
+const Story = ({ color, icon, heading, lede, sellingPoints }) => {
   return (
     <Box
       variant={[theming.VARIANT_DEFAULT, "story"]}
@@ -20,36 +22,40 @@ const Story = ({ color, icon, iconColor }) => {
     >
       <Layout variant={"storyContent"}>
         <header>
-          <Heading level={2}>Harvest data</Heading>
-          <IconContainer>
-            <ThemeComponent tagName={icon} color={iconColor} autoWidth />
-          </IconContainer>
+          {heading && <Heading level={2}>{heading}</Heading>}
+          {icon && (
+            <IconContainer>
+              <ThemeComponent
+                tagName={icon}
+                color={getIconColor(color)}
+                autoWidth
+              />
+            </IconContainer>
+          )}
         </header>
         <div>
           <Layout rowGap={"gridSmall"}>
-            <Paragraph>
-              Reward sustainable behaviour. Spend time on innovation, not
-              integration. WasteIQ is a cloud based platform for public waste
-              management. We collect and upcycle data from urban waste
-              infrastructure. The digital foundation for a more sustainable
-              tomorrow.
-            </Paragraph>
-            <div>
-              <Layout rowGap={"small"}>
-                <Heading level={4}>Collect data from</Heading>
-                <Layout as={"ul"} rowGap={"small"}>
-                  <li>
-                    <Flag img={""}>Bin collection trucks</Flag>
-                  </li>
-                  <li>
-                    <Flag img={""}>Underground systems</Flag>
-                  </li>
-                  <li>
-                    <Flag img={""}>Recycling plants</Flag>
-                  </li>
+            {lede && <Paragraph>{lede}</Paragraph>}
+            {sellingPoints && (
+              <div>
+                <Layout rowGap={"small"}>
+                  {sellingPoints.title && (
+                    <Heading level={4}>{sellingPoints.title}</Heading>
+                  )}
+                  {sellingPoints.points && (
+                    <Layout as={"ul"} rowGap={"small"}>
+                      {sellingPoints.points.map(point => (
+                        <li key={point._key}>
+                          <Flag img={<SanityImage image={point.image} />}>
+                            {point.text}
+                          </Flag>
+                        </li>
+                      ))}
+                    </Layout>
+                  )}
                 </Layout>
-              </Layout>
-            </div>
+              </div>
+            )}
           </Layout>
         </div>
       </Layout>

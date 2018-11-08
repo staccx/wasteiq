@@ -17,7 +17,11 @@ const Home = () => {
           icon={"IconQuarterCircle"}
           iconColor={"pink"}
         />
-        <Story color={"apricotLight"} icon={"IconDash"} iconColor={"apricot"} />
+        <Story
+          color={"apricotLight"}
+          icon={"IconDiagonalLine"}
+          iconColor={"apricot"}
+        />
         <PatternContainer>
           <Features />
         </PatternContainer>

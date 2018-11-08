@@ -8,7 +8,7 @@ const getResponsiveSize = level => {
     case 2:
       return theming.font("h25")
     default:
-      return theming.font(level)
+      return theming.font(`h${level}`)
   }
 }
 

@@ -1,10 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import BlockContent from "@sanity/block-content-to-react"
 import { Layout, ThemeComponent, Box } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 import PageLayout from "../PageLayout/PageLayout"
+import blockContentSerializer from "../../pages/blockContentSerializer"
 
-const PatternContainer = ({ children }) => {
+const PatternContainer = ({ blocks }) => {
   return (
     <FullWidth>
       <Container>
@@ -12,7 +14,11 @@ const PatternContainer = ({ children }) => {
       </Container>
       <PageLayout>
         <Layout paddingTop={"gridSmall"} paddingBottom={"gridSmall"}>
-          <Box variant={"white"}>{children}</Box>
+          <BlockContent
+            blocks={blocks}
+            serializers={blockContentSerializer}
+            renderContainerOnSingleChild
+          />
         </Layout>
       </PageLayout>
     </FullWidth>

@@ -6,12 +6,21 @@ import {
   Paragraph,
   Layout,
   ThemeComponent,
-  Button,
   theming
 } from "@staccx/base"
 import FeaturesList from "../Features/Features.List"
+import getIconColor from "../../utils/getIconColor"
+import ButtonGroup from "../ButtonGroup/ButtonGroup"
 
-const CallToAction = ({ color, icon, iconColor }) => {
+const CallToAction = ({
+  color,
+  icon,
+  features,
+  butons,
+  lede,
+  heading,
+  buttons
+}) => {
   return (
     <Box
       color={color}
@@ -22,28 +31,28 @@ const CallToAction = ({ color, icon, iconColor }) => {
       <Layout rowGap={"large"}>
         <header>
           <Layout>
-            <Heading level={2}>
-              Want to become part of WasteIQ ecosystem?
-            </Heading>
-            <Paragraph>
-              To solve the systemic waste challenge we need to work together in
-              the value chain, and support open standards. We currently run
-              pilot projects with several waste management companies.{" "}
-            </Paragraph>
-            <div>
-              <Button color={"blueLight"}>
-                Become a part of the Waste IQ ecosystem!
-              </Button>
-            </div>
+            {heading && <Heading level={2}>{heading}</Heading>}
+            {lede && <Paragraph>{lede}</Paragraph>}
+            {buttons && <ButtonGroup buttons={buttons} />}
           </Layout>
         </header>
         <Body>
-          <IconContainer>
-            <ThemeComponent tagName={icon} color={iconColor} autoWidth />
-          </IconContainer>
-          <div>
-            <FeaturesList />
-          </div>
+          {icon && (
+            <IconContainer>
+              <ThemeComponent
+                tagName={icon}
+                color={getIconColor(color)}
+                autoWidth
+              />
+            </IconContainer>
+          )}
+          {features &&
+            features.features && (
+              <div>
+                <FeaturesList features={features.features} />
+              </div>
+            )}
+          q
         </Body>
       </Layout>
     </Box>

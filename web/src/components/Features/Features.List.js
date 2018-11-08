@@ -1,46 +1,17 @@
 import React from "react"
-import styled from "styled-components"
 import { List, Heading, Paragraph, Layout } from "@staccx/base"
 
-const FeaturesList = () => {
+const FeaturesList = ({ features }) => {
   return (
     <List variant={"columns"}>
-      <li>
-        <Layout rowGap={"tiny"}>
-          <Heading level={4}>A ledger for waste transactions</Heading>
-          <Paragraph>
-            Who throws what using what infrastructure? WasteIQ gathers waste
-            transactions in a structured cloud database.{" "}
-          </Paragraph>
-        </Layout>
-      </li>
-      <li>
-        <Layout rowGap={"tiny"}>
-          <Heading level={4}>A ledger for waste transactions</Heading>
-          <Paragraph>
-            Who throws what using what infrastructure? WasteIQ gathers waste
-            transactions in a structured cloud database.{" "}
-          </Paragraph>
-        </Layout>
-      </li>
-      <li>
-        <Layout rowGap={"tiny"}>
-          <Heading level={4}>A ledger for waste transactions</Heading>
-          <Paragraph>
-            Who throws what using what infrastructure? WasteIQ gathers waste
-            transactions in a structured cloud database.{" "}
-          </Paragraph>
-        </Layout>
-      </li>
-      <li>
-        <Layout rowGap={"tiny"}>
-          <Heading level={4}>A ledger for waste transactions</Heading>
-          <Paragraph>
-            Who throws what using what infrastructure? WasteIQ gathers waste
-            transactions in a structured cloud database.{" "}
-          </Paragraph>
-        </Layout>
-      </li>
+      {features.map(feature => (
+        <li key={feature._key}>
+          <Layout rowGap={"tiny"}>
+            {feature.title && <Heading level={4}>{feature.title}</Heading>}
+            {feature.body && <Paragraph>{feature.body}</Paragraph>}
+          </Layout>
+        </li>
+      ))}
     </List>
   )
 }
