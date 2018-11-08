@@ -14,7 +14,7 @@ export default {
       title: "Lede"
     },
     {
-      type: "color",
+      type: "colorLight",
       name: "color",
       title: "Color"
     },
