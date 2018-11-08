@@ -14,6 +14,30 @@ export const colors = [
   {
     name: "Blue (light)",
     color: "blueLight"
+  },
+  {
+    name: "Pink",
+    color: "pink"
+  },
+  {
+    name: "Pink (light)",
+    color: "pinkLight"
+  },
+  {
+    name: "Apricot",
+    color: "apricot"
+  },
+  {
+    name: "Apricot (light)",
+    color: "apricotLight"
+  },
+  {
+    name: "Black",
+    color: "primary"
+  },
+  {
+    name: "Black (light)",
+    color: "primary"
   }
 ]
 
