@@ -25,6 +25,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/menu.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/blockContent.js"
     },
     {
@@ -42,6 +46,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/colorSelect.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/lightColorSelect.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
