@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import BlockContent from "@sanity/block-content-to-react"
-import { Layout, ThemeComponent, Box } from "@staccx/base"
+import { Layout, ThemeComponent } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 import PageLayout from "../PageLayout/PageLayout"
 import blockContentSerializer from "../../pages/blockContentSerializer"
