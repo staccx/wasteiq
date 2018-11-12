@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { SanityImage } from "@staccx/sanity"
+import { SanityImage, SanityList } from "@staccx/sanity"
 import {
   Heading,
   Paragraph,
@@ -39,15 +39,15 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
             {lede && <Paragraph>{lede}</Paragraph>}
             {sellingPoints && (
               <div>
-                <Layout rowGap={"small"}>
+                <Layout rowGap={"medium"}>
                   {sellingPoints.title && (
                     <Heading level={4}>{sellingPoints.title}</Heading>
                   )}
                   {sellingPoints.points && (
-                    <Layout as={"ul"} rowGap={"small"}>
+                    <Layout as={"ul"} rowGap={"medium"}>
                       {sellingPoints.points.map(point => (
                         <li key={point._key}>
-                          <Flag img={<SanityImage image={point.image} />}>
+                          <Flag img={<StyledImage image={point.image} />}>
                             {point.text}
                           </Flag>
                         </li>
@@ -63,6 +63,12 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
     </Box>
   )
 }
+
+const StyledImage = styled(SanityImage)`
+  display: block;
+  min-width: 92px;
+  max-height: 64px;
+`
 
 const IconContainer = styled.div`
   @media (min-width: ${theming.wrapper("medium")}) {
