@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { SanityImage, SanityList } from "@staccx/sanity"
+import { SanityImage } from "@staccx/sanity"
 import {
   Heading,
   Paragraph,

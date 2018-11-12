@@ -42,6 +42,9 @@ const getBgColor = background => {
 
     case "blueLight":
       return theming.color("blueLight")
+
+    default:
+      return "transparent"
   }
 }
 
