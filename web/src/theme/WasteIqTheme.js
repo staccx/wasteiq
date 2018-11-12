@@ -12,6 +12,7 @@ import { IconDiagonalLineComponent } from "./icons/Icon.DiagonalLine"
 import { DotsPatternComponent } from "./components/Component.DotsPattern"
 import { HeadingVariants } from "./variants/Heading.Variants"
 import { ListVariants } from "./variants/List.Variants"
+import { DividerVariants } from "./variants/Divider.Variants"
 
 const borderRadius = "0"
 
@@ -121,5 +122,6 @@ export default new theming.Theme({
     ItemGroupVariants,
     ParagraphVariants,
     HeadingVariants,
-    ListVariants
+    ListVariants,
+    DividerVariants
   ]) // Variants

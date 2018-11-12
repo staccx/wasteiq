@@ -6,9 +6,7 @@ import { SanityList } from "@staccx/sanity"
 import Page from "./pages/Page"
 
 const Routes = epitath(function*({ change, inverted }) {
-  const { result: pages } = yield (
-    <SanityList type={`page`} pick={"blocks[],..."} />
-  )
+  const { result: pages } = yield <SanityList type={`page`} />
 
   if (!pages) {
     return <Loading />

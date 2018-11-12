@@ -54,6 +54,10 @@ const Outer = styled.div`
 const LogoLink = styled(Link)`
   display: block;
   max-width: 168px;
+
+  @media (min-width: 1190px) {
+    margin-left: -${theming.spacing.large};
+  }
 `
 
 const MenuItems = styled.div`
