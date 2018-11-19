@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import BlockContent from "@sanity/block-content-to-react"
 import { Layout, ThemeComponent, theming, fontSmoothing } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
