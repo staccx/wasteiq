@@ -22,7 +22,7 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
       size={"medium"}
     >
       <Layout variant={"storyContent"}>
-        <header>
+        <StoryHeader>
           {heading && <Heading level={2}>{heading}</Heading>}
           {icon && (
             <IconContainer>
@@ -33,7 +33,7 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
               />
             </IconContainer>
           )}
-        </header>
+        </StoryHeader>
         <div>
           <Layout rowGap={"gridSmall"}>
             {lede && <Paragraph>{lede}</Paragraph>}
@@ -63,6 +63,14 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
     </Box>
   )
 }
+
+const StoryHeader = styled.header`
+  @media (min-width: ${theming.wrapper("medium")}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+`
 
 const StyledImage = styled(SanityImage)`
   display: block;

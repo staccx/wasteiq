@@ -16,7 +16,8 @@ export const LayoutVariants = theming.createVariants(
       grid-template-columns: 1fr;
 
       @media (min-width: ${theming.wrapper("medium")}) {
-        grid-template-columns: 25% 1fr;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: ${theming.spacing.large};
         grid-template-areas: "header  content";
       }
     `
