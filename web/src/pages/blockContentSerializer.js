@@ -30,6 +30,7 @@ const serializer = {
         heading={node.title}
         lede={node.lede}
         features={node.features}
+        buttons={node.buttons}
       />
     ),
     callToAction: ({ node }) => (

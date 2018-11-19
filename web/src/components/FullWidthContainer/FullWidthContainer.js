@@ -1,7 +1,7 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import BlockContent from "@sanity/block-content-to-react"
-import { Layout, ThemeComponent, theming } from "@staccx/base"
+import { Layout, ThemeComponent, theming, fontSmoothing } from "@staccx/base"
 import FullWidth from "../FullWidth/FullWidth"
 import PageLayout from "../PageLayout/PageLayout"
 import blockContentSerializer from "../../pages/blockContentSerializer"
@@ -70,6 +70,7 @@ const Container = styled.div`
 
 const StyledFullWidth = styled(FullWidth)`
   color: ${p => p.background === "black" && theming.color.white};
+  ${p => p.background === "black" && fontSmoothing};
 `
 
 export default PatternContainer

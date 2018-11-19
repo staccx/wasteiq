@@ -1,10 +1,10 @@
 import React from "react"
 
 import { Layout, Heading, Paragraph, Divider } from "@staccx/base"
-
+import ButtonGroup from "../ButtonGroup/ButtonGroup"
 import FeaturesList from "./Features.List"
 
-const Features = ({ heading, lede, features }) => {
+const Features = ({ heading, lede, features, buttons }) => {
   return (
     <Layout as={"article"}>
       <header>
@@ -15,7 +15,8 @@ const Features = ({ heading, lede, features }) => {
             </Heading>
           )}
           {lede && <Paragraph>{lede}</Paragraph>}
-          <Divider />
+          {buttons && <ButtonGroup buttons={buttons} />}
+          {features && features.features && <Divider />}
         </Layout>
       </header>
       {features &&

@@ -14,6 +14,19 @@ export default {
       title: "Lede"
     },
     {
+      type: "array",
+      name: "buttons",
+      title: "Buttons",
+      of: [
+        {
+          type: "buttonLink"
+        },
+        {
+          type: "buttonPageLink"
+        }
+      ]
+    },
+    {
       type: "featuresList",
       name: "features"
     }
@@ -26,7 +39,7 @@ export default {
       const { title } = selection
       return {
         title,
-        subtitle: "Story"
+        subtitle: "Features"
       }
     }
   }
