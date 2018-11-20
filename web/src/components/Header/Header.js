@@ -83,12 +83,14 @@ const ButtonContainer = styled.div`
 `
 
 const MenuItems = styled.div`
-  display: ${p => (p.isOpen ? "flex" : "none")};
-  flex-basis: 100%;
-  flex-direction: column;
+  @media only screen and (max-width: ${theming.wrapper("mediumMinusOne")}) {
+    display: ${p => (p.isOpen ? "flex" : "none")};
+    flex-basis: 100%;
+    flex-direction: column;
+    margin-top: ${theming.spacing.small};
+  }
 
   @media only screen and (min-width: ${theming.wrapper.medium}) {
-    flex-basis: auto;
     display: table;
 
     > *:not(:first-child) {
@@ -100,10 +102,21 @@ const MenuItems = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
 
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom: 3px solid ${theming.color("pink")};
+  @media only screen and (min-width: ${theming.wrapper("medium")}) {
+    &:hover,
+    &:active,
+    &:focus {
+      border-bottom: 3px solid ${theming.color("pink")};
+    }
+  }
+
+  @media only screen and (max-width: ${theming.wrapper("mediumMinusOne")}) {
+    padding: ${theming.spacing.small} ${theming.spacing.tiny};
+    border-bottom: 1px solid ${theming.color.line};
+
+    &:first-child {
+      border-top: 1px solid ${theming.color.line};
+    }
   }
 `
 

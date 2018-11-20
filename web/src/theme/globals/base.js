@@ -7,7 +7,7 @@ export default css`
     line-height: 1.7;
   }
   ::selection {
-    background: rgba(34, 185, 122, 0.2);
+    background: #abecd1;
     color: #000;
   }
 
