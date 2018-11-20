@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 import { SanityDocument } from "@staccx/sanity"
 import { ThemeComponent, theming, State } from "@staccx/base"
+import { FadeIn } from "@staccx/animations"
 import HeaderMenuButton from "./Header.MenuBtn"
 
 const Header = () => {
@@ -44,6 +45,8 @@ const Header = () => {
                         return (
                           <StyledLink
                             to={item.link.path.current}
+                            activeClassName="wiqSel"
+                            exact
                             key={item._key}
                           >
                             {item.label}
@@ -88,6 +91,7 @@ const MenuItems = styled.div`
     flex-basis: 100%;
     flex-direction: column;
     margin-top: ${theming.spacing.small};
+    animation: ${FadeIn} 0.5s ease-out forwards 1;
   }
 
   @media only screen and (min-width: ${theming.wrapper.medium}) {
@@ -99,10 +103,21 @@ const MenuItems = styled.div`
   }
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   text-decoration: none;
 
   @media only screen and (min-width: ${theming.wrapper("medium")}) {
+    transition: border 0.2s ease;
+
+    &.wiqSel {
+      border-bottom: 3px solid ${theming.color("apricot")};
+      &:hover,
+      &:active,
+      &:focus {
+        border-bottom: 3px solid ${theming.color("blue")};
+      }
+    }
+
     &:hover,
     &:active,
     &:focus {
@@ -111,11 +126,23 @@ const StyledLink = styled(Link)`
   }
 
   @media only screen and (max-width: ${theming.wrapper("mediumMinusOne")}) {
+    position: relative;
     padding: ${theming.spacing.small} ${theming.spacing.tiny};
     border-bottom: 1px solid ${theming.color.line};
 
     &:first-child {
       border-top: 1px solid ${theming.color.line};
+    }
+
+    &.wiqSel::before {
+      content: ">";
+      font-family: ${theming.fontFamily.heading};
+      color: ${theming.color("apricot")};
+      position: absolute;
+      top: 50%;
+      left: -${theming.spacing.small};
+      transform: translateY(-50%);
+      animation: ${FadeIn} 0.5s ease-out forwards 1;
     }
   }
 `
