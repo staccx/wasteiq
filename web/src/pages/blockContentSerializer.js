@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import BlockContent from "@sanity/block-content-to-react"
 import { SanityImage } from "@staccx/sanity"
 import { Layout } from "@staccx/base"
@@ -49,7 +50,11 @@ const serializer = {
       )
     },
     image: ({ node }) => {
-      return <SanityImage image={node} />
+      return (
+        <ImageContainer>
+          <SanityImage image={node} />
+        </ImageContainer>
+      )
     },
     story: ({ node }) => (
       <Story
@@ -63,5 +68,9 @@ const serializer = {
     )
   }
 }
+
+const ImageContainer = styled.div`
+  text-align: center;
+`
 
 export default serializer
