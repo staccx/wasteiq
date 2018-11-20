@@ -76,6 +76,12 @@ const LogoLink = styled(Link)`
   display: block;
   max-width: 168px;
 
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
   @media (min-width: 1190px) {
     margin-left: -${theming.spacing.large};
   }
@@ -122,6 +128,7 @@ const StyledLink = styled(NavLink)`
     &:active,
     &:focus {
       border-bottom: 3px solid ${theming.color("pink")};
+      outline: none;
     }
   }
 
