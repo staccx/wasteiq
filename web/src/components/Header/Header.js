@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { SanityDocument } from "@staccx/sanity"
-import { ThemeComponent, theming } from "@staccx/base"
+import { ThemeComponent, theming, State } from "@staccx/base"
+import HeaderMenuButton from "./Header.MenuBtn"
 
 const Header = () => {
   return (
@@ -20,24 +21,40 @@ const Header = () => {
           }
 
           return (
-            <div>
-              <MenuItems>
-                {document.menuItems.map(item => {
-                  if (item._type === "menuItemOutbound") {
-                    return (
-                      <StyledLink href={item.link} key={item._key} as="a">
-                        {item.label}
-                      </StyledLink>
-                    )
-                  }
-                  return (
-                    <StyledLink to={item.link.path.current} key={item._key}>
-                      {item.label}
-                    </StyledLink>
-                  )
-                })}
-              </MenuItems>
-            </div>
+            <State>
+              {({ change, isOpen = false }) => {
+                return (
+                  <React.Fragment>
+                    <ButtonContainer>
+                      <HeaderMenuButton
+                        onClick={() => change({ isOpen: !isOpen })}
+                        isOpen={isOpen}
+                      />
+                    </ButtonContainer>
+
+                    <MenuItems isOpen={isOpen}>
+                      {document.menuItems.map(item => {
+                        if (item._type === "menuItemOutbound") {
+                          return (
+                            <StyledLink href={item.link} key={item._key} as="a">
+                              {item.label}
+                            </StyledLink>
+                          )
+                        }
+                        return (
+                          <StyledLink
+                            to={item.link.path.current}
+                            key={item._key}
+                          >
+                            {item.label}
+                          </StyledLink>
+                        )
+                      })}
+                    </MenuItems>
+                  </React.Fragment>
+                )
+              }}
+            </State>
           )
         }}
       </SanityDocument>
@@ -47,6 +64,7 @@ const Header = () => {
 
 const Outer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: ${theming.spacing("gridSmall")} 0;
 `
@@ -60,11 +78,22 @@ const LogoLink = styled(Link)`
   }
 `
 
-const MenuItems = styled.div`
-  display: table;
+const ButtonContainer = styled.div`
+  justify-self: flex-end;
+`
 
-  > *:not(:first-child) {
-    margin-left: ${theming.spacing.medium};
+const MenuItems = styled.div`
+  display: ${p => (p.isOpen ? "flex" : "none")};
+  flex-basis: 100%;
+  flex-direction: column;
+
+  @media only screen and (min-width: ${theming.wrapper.medium}) {
+    flex-basis: auto;
+    display: table;
+
+    > *:not(:first-child) {
+      margin-left: ${theming.spacing.medium};
+    }
   }
 `
 
