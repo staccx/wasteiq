@@ -1,6 +1,6 @@
 {
   "name": "wasteiq-web",
-  "alias": ["wasteiq.stac.cx"],
+  "alias": ["www.wasteiq.no", "wasteiq.nl", "wasteiq.es"],
   "type": "static",
   "static": {
     "public": "build",
