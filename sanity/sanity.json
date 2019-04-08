@@ -12,7 +12,8 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@staccx/sanity-plugin-i18n"
   ],
   "parts": [
     {
@@ -78,6 +79,14 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/fullWidthContainer.js"
+    },
+    {
+      "implements": "part:@staccx/i18n/languages",
+      "path": "./schemas/languages.js"
+    },
+    {
+      "implements": "part:@staccx/i18n/blockOptions",
+      "path": "./schemas/blockOptions.js"
     }
   ]
 }

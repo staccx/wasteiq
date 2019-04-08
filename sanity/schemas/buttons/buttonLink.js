@@ -9,6 +9,11 @@ export default {
       title: "Text"
     },
     {
+      type: "localeString",
+      name: "localeText",
+      title: "Text"
+    },
+    {
       type: "string",
       name: "url",
       title: "Url"

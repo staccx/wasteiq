@@ -9,6 +9,11 @@ export default {
       title: "Text"
     },
     {
+      type: "localeString",
+      name: "localeText",
+      title: "Text"
+    },
+    {
       type: "reference",
       name: "page",
       title: "Page",

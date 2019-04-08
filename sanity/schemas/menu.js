@@ -20,6 +20,11 @@ export default {
               title: "Label"
             },
             {
+              type: "localeString",
+              name: "localeLabel",
+              title: "Label"
+            },
+            {
               type: "reference",
               name: "link",
               title: "Link",

@@ -9,8 +9,18 @@ export default {
       title: "Title"
     },
     {
+      type: "localeString",
+      name: "localeTitle",
+      title: "Title"
+    },
+    {
       type: "text",
       name: "lede",
+      title: "Lede"
+    },
+    {
+      type: "localeText",
+      name: "localeLede",
       title: "Lede"
     },
     {

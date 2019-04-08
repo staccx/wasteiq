@@ -18,9 +18,19 @@ export default {
               name: "title"
             },
             {
+              type: "localeString",
+              title: "Title",
+              name: "localeTitle"
+            },
+            {
               type: "text",
               title: "Body",
               name: "body"
+            },
+            {
+              type: "localeText",
+              title: "Body",
+              name: "localeBody"
             }
           ]
         }

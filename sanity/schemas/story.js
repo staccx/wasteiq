@@ -9,8 +9,13 @@ export default {
       title: "Title"
     },
     {
-      type: "text",
-      name: "lede",
+      type: "localeString",
+      name: "localeTitle",
+      title: "Title"
+    },
+    {
+      type: "localeText",
+      name: "localeLede",
       title: "Lede"
     },
     {
@@ -34,6 +39,11 @@ export default {
           name: "title"
         },
         {
+          type: "localeString",
+          title: "Title",
+          name: "localeTitle"
+        },
+        {
           type: "array",
           name: "points",
           title: "Points",
@@ -47,6 +57,11 @@ export default {
                   type: "string",
                   title: "Text",
                   name: "text"
+                },
+                {
+                  type: "localeString",
+                  title: "Text",
+                  name: "localeText"
                 },
                 {
                   name: "image",

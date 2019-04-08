@@ -7,6 +7,9 @@ export default {
       type: "richText"
     },
     {
+      type: "localeRichText"
+    },
+    {
       type: "image",
       options: { hotspot: true }
     },
