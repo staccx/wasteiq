@@ -3,8 +3,7 @@ export default {
   name: "page",
   title: "Pages",
   fields: [
-    { type: "string", name: "name", title: "Name" },
-    { type: "localeString", name: "localeName", title: "Name" },
+    { type: "localeString", name: "name", title: "Name" },
     {
       type: "slug",
       name: "path",
@@ -21,5 +20,16 @@ export default {
       name: "blocks",
       title: "Blocks"
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: "name.en"
+    },
+    prepare(selection, options) {
+      const { title } = selection
+      return {
+        title: title
+      }
+    }
+  }
 }

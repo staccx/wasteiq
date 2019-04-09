@@ -2,7 +2,8 @@ export default [
   {
     id: "nb",
     title: "Norwegian",
-    isDefault: true
   },
-  { id: "en", title: "English"}
+  { id: "en", title: "English",
+    isDefault: true
+}
 ]

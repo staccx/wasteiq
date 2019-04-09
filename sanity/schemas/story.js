@@ -4,18 +4,13 @@ export default {
   title: "Story box",
   fields: [
     {
-      type: "string",
+      type: "localeString",
       name: "title",
       title: "Title"
     },
     {
-      type: "localeString",
-      name: "localeTitle",
-      title: "Title"
-    },
-    {
       type: "localeText",
-      name: "localeLede",
+      name: "lede",
       title: "Lede"
     },
     {
@@ -34,14 +29,9 @@ export default {
       name: "sellingPoints",
       fields: [
         {
-          type: "string",
-          title: "Title",
-          name: "title"
-        },
-        {
           type: "localeString",
           title: "Title",
-          name: "localeTitle"
+          name: "title"
         },
         {
           type: "array",
@@ -54,21 +44,21 @@ export default {
               name: "sellingPoints",
               fields: [
                 {
-                  type: "string",
-                  title: "Text",
-                  name: "text"
-                },
-                {
                   type: "localeString",
                   title: "Text",
-                  name: "localeText"
+                  name: "text"
                 },
                 {
                   name: "image",
                   title: "Image",
                   type: "image"
                 }
-              ]
+              ],
+              preview: {
+                select: {
+                  title: "text.en"
+                }
+              }
             }
           ]
         }
@@ -77,7 +67,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "title"
+      title: "title.en"
     },
     prepare(selection, options) {
       const { title } = selection

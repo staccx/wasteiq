@@ -4,9 +4,6 @@ export default {
   type: "array",
   of: [
     {
-      type: "richText"
-    },
-    {
       type: "localeRichText"
     },
     {

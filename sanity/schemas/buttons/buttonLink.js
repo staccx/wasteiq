@@ -4,13 +4,8 @@ export default {
   name: "buttonLink",
   fields: [
     {
-      type: "string",
-      name: "text",
-      title: "Text"
-    },
-    {
       type: "localeString",
-      name: "localeText",
+      name: "text",
       title: "Text"
     },
     {

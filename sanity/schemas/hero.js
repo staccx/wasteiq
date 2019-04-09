@@ -4,23 +4,13 @@ export default {
   title: "Hero",
   fields: [
     {
-      type: "string",
+      type: "localeString",
       name: "title",
       title: "Title"
     },
     {
-      type: "localeString",
-      name: "localeTitle",
-      title: "Title"
-    },
-    {
-      type: "text",
-      name: "lede",
-      title: "Lede"
-    },
-    {
       type: "localeText",
-      name: "localeLede",
+      name: "lede",
       title: "Lede"
     },
     {
@@ -39,7 +29,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "title"
+      title: "title.en"
     },
     prepare(selection, options) {
       const { title } = selection

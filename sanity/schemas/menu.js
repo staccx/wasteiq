@@ -15,13 +15,8 @@ export default {
           title: "Menu Item",
           fields: [
             {
-              type: "string",
-              name: "label",
-              title: "Label"
-            },
-            {
               type: "localeString",
-              name: "localeLabel",
+              name: "label",
               title: "Label"
             },
             {
@@ -30,7 +25,12 @@ export default {
               title: "Link",
               to: [{ type: "page" }]
             }
-          ]
+          ],
+          preview: {
+            select: {
+              title: "label.en"
+            }
+          }
         },
         {
           type: "object",
@@ -38,7 +38,7 @@ export default {
           title: "Outbound link",
           fields: [
             {
-              type: "string",
+              type: "localeString",
               name: "label",
               title: "Label"
             },
@@ -47,7 +47,12 @@ export default {
               name: "link",
               title: "Link"
             }
-          ]
+          ],
+          preview: {
+            select: {
+              title: "label.en"
+            }
+          }
         }
       ]
     }

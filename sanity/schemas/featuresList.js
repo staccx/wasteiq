@@ -13,37 +13,33 @@ export default {
           name: "feature",
           fields: [
             {
-              type: "string",
+              type: "localeString",
               title: "Title",
               name: "title"
             },
             {
-              type: "localeString",
-              title: "Title",
-              name: "localeTitle"
-            },
-            {
-              type: "text",
-              title: "Body",
-              name: "body"
-            },
-            {
               type: "localeText",
               title: "Body",
-              name: "localeBody"
+              name: "body"
             }
-          ]
+          ],
+          preview: {
+            select: {
+              title: "title.en"
+            }
+          }
         }
       ]
     }
   ],
   preview: {
     select: {
-      title: "features[0].title",
+      title: "features[0].title.en",
       length: "features.length"
     },
     prepare(selection, options) {
       const { title, length } = selection
+      console.log(selection)
       return {
         title: title + " (" + length + " total features)",
         subtitle: "Feature list"
