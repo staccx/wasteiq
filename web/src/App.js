@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Router } from "react-router-dom"
 import { GlobalStyle, WebFonts } from "@staccx/base"
+import { LanguageProvider} from "@staccx/i18n"
 import createHistory from "history/createBrowserHistory"
 import Header from "./components/Header/Header"
 import PageLayout from "./components/PageLayout/PageLayout"
@@ -13,7 +14,7 @@ class App extends Component {
 
     return (
       <Router history={history}>
-        <React.Fragment>
+        <LanguageProvider texts={{}} logLevel={5} languages={["en, nb"]} language="en">
           <GlobalStyle />
           <WebFonts />
           <PageLayout>
@@ -21,7 +22,7 @@ class App extends Component {
           </PageLayout>
           <Routes />
           <Footer />
-        </React.Fragment>
+        </LanguageProvider>
       </Router>
     )
   }

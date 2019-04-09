@@ -5,6 +5,10 @@ import { SanityDocument } from "@staccx/sanity"
 import { ThemeComponent, theming, State } from "@staccx/base"
 import { FadeIn } from "@staccx/animations"
 import HeaderMenuButton from "./Header.MenuBtn"
+import { i18nInstance } from "@staccx/i18n"
+
+const t = val => i18nInstance.convert(val)
+
 
 const Header = () => {
   return (
@@ -38,7 +42,7 @@ const Header = () => {
                         if (item._type === "menuItemOutbound") {
                           return (
                             <StyledLink href={item.link} key={item._key} as="a">
-                              {item.label}
+                              {t(item.label)}
                             </StyledLink>
                           )
                         }
@@ -49,7 +53,7 @@ const Header = () => {
                             exact
                             key={item._key}
                           >
-                            {item.label}
+                            {t(item.label)}
                           </StyledLink>
                         )
                       })}

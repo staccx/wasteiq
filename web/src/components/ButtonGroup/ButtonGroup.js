@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { SanityDocument } from "@staccx/sanity"
 import { ItemGroup, Button } from "@staccx/base"
+import {i18nInstance} from "@staccx/i18n"
 
 const ButtonGroup = ({ buttons }) => {
   return (
@@ -15,7 +16,7 @@ const ButtonGroup = ({ buttons }) => {
               href={button.url}
               key={button._key}
             >
-              {button.text}
+              {i18nInstance.convert(button.text)}
             </Button>
           )
         }
@@ -32,7 +33,7 @@ const ButtonGroup = ({ buttons }) => {
                   to={document.path}
                   key={button._key}
                 >
-                  {button.text}
+                  {i18nInstance.convert(button.text)}
                 </Button>
               )
             }}

@@ -6,7 +6,7 @@ import { SanityProvider } from "@staccx/sanity"
 import App from "./App"
 
 ReactDOM.render(
-  <SanityProvider dataset={"production"} projectId={"12su2jen"} useCdn>
+  <SanityProvider dataset={"development"} projectId={"12su2jen"} useCdn>
     <ThemeProvider theme={WasteIqTheme}>
       <App />
     </ThemeProvider>

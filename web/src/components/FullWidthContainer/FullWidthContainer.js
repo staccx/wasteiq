@@ -7,7 +7,6 @@ import PageLayout from "../PageLayout/PageLayout"
 import blockContentSerializer from "../../pages/blockContentSerializer"
 
 const PatternContainer = ({ blocks, background }) => {
-  console.log(background)
   return (
     <Outer>
       <StyledFullWidth background={background}>

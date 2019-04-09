@@ -11,6 +11,9 @@ import {
 import FeaturesList from "../Features/Features.List"
 import getIconColor from "../../utils/getIconColor"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
+import { i18nInstance } from "@staccx/i18n"
+
+const t = val => i18nInstance.convert(val)
 
 const CallToAction = ({
   color,
@@ -32,8 +35,8 @@ const CallToAction = ({
       <Layout rowGap={"large"}>
         <header>
           <Layout>
-            {heading && <Heading level={2}>{heading}</Heading>}
-            {lede && <Paragraph>{lede}</Paragraph>}
+  {heading && <Heading level={2}>{t(heading)}</Heading>}
+            {lede && <Paragraph>{t(lede)}</Paragraph>}
             {buttons && <ButtonGroup buttons={buttons} />}
           </Layout>
         </header>

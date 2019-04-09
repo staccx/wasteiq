@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { SanityDocument } from "@staccx/sanity"
 import { Layout, LayoutItem, Box, ThemeComponent, theming } from "@staccx/base"
+import { i18nInstance } from "@staccx/i18n"
+
+const t = val => i18nInstance.convert(val)
 
 const Footer = () => {
   return (
@@ -35,7 +38,7 @@ const Footer = () => {
                         if (item._type === "menuItemOutbound") {
                           return (
                             <StyledLink href={item.link} key={item._key} as="a">
-                              {item.label}
+                              {t(item.label)}
                             </StyledLink>
                           )
                         }
@@ -44,7 +47,7 @@ const Footer = () => {
                             to={item.link.path.current}
                             key={item._key}
                           >
-                            {item.label}
+                            {t(item.label)}
                           </StyledLink>
                         )
                       })}

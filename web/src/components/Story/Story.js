@@ -11,7 +11,9 @@ import {
   theming
 } from "@staccx/base"
 import getIconColor from "../../utils/getIconColor"
+import { i18nInstance } from "@staccx/i18n"
 
+const t = val => i18nInstance.convert(val)
 const Story = ({ color, icon, heading, lede, sellingPoints }) => {
   return (
     <Box
@@ -25,14 +27,14 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
         <StoryHeader>
           {heading && <Heading level={2}>{heading}</Heading>}
           {icon && (
-            <IconContainer>
-              <ThemeComponent
-                tagName={icon}
-                color={getIconColor(color)}
-                autoWidth
-              />
-            </IconContainer>
-          )}
+          <IconContainer>
+            <ThemeComponent
+              tagName={icon}
+              color={getIconColor(color)}
+              autoWidth
+            />
+          </IconContainer>
+      )}
         </StoryHeader>
         <div>
           <Layout rowGap={"gridSmall"}>
@@ -41,14 +43,14 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
               <div>
                 <Layout rowGap={"medium"}>
                   {sellingPoints.title && (
-                    <Heading level={4}>{sellingPoints.title}</Heading>
+                    <Heading level={4}>{t(sellingPoints.title)}</Heading>
                   )}
                   {sellingPoints.points && (
                     <Layout as={"ul"} rowGap={"medium"}>
                       {sellingPoints.points.map(point => (
                         <li key={point._key}>
                           <Flag img={<StyledImage image={point.image} />}>
-                            {point.text}
+                            {t(point.text)}
                           </Flag>
                         </li>
                       ))}
