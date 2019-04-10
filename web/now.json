@@ -1,7 +1,7 @@
 {
   "name": "wasteiq-web",
   "version": 2,
-  "alias": ["wasteiq.stac.cx"],
+  "alias": ["www.wasteiq.no", "wasteiq.nl", "wasteiq.es"],
   "scope": "staccx",
   "builds": [
     {
