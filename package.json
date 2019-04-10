@@ -1,9 +1,8 @@
 {
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@staccx/eslint-config": "^8.0.0",
-    "eslint": "5.6.0",
+    "eslint": "5.12.0",
     "babel-eslint": "9.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
