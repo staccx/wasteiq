@@ -12,6 +12,7 @@ export default {
     },
     { type: "story" },
     { type: "hero" },
+    { type: "partnersBlock" },
     { type: "features" },
     { type: "callToAction" },
     { type: "fullWidthContainer" }

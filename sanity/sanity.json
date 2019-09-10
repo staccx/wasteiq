@@ -26,6 +26,18 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/partner.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/example.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/partnersBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/menu.js"
     },
     {
