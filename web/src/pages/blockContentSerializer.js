@@ -3,7 +3,7 @@ import styled from "styled-components"
 import BlockContent from "@sanity/block-content-to-react"
 import { SanityImage } from "@staccx/sanity"
 import { Layout } from "@staccx/base"
-import {i18nInstance} from "@staccx/i18n"
+import { i18nInstance } from "@staccx/i18n"
 import Story from "../components/Story/Story"
 import Hero from "../components/Hero/Hero"
 import RichText from "../components/RichText/RichText"
@@ -23,12 +23,21 @@ const serializer = {
         key={node._key}
       />
     ),
-    localeRichText: ({node}) => {
+    partnersBlock: ({ node }) => (
+      <Hero
+        heading={t(node.title)}
+        lede={t(node.lede)}
+        buttons={node.buttons}
+        key={node._key}
+      />
+    ),
+    localeRichText: ({ node }) => {
       return (
-    <RichText>
-      <BlockContent blocks={i18nInstance.convert(node)} />
-    </RichText>
-    )},
+        <RichText>
+          <BlockContent blocks={i18nInstance.convert(node)} />
+        </RichText>
+      )
+    },
     richText: ({ node }) => (
       <RichText>
         <BlockContent blocks={node.bodyContent} serializers={serializer} />
@@ -53,9 +62,7 @@ const serializer = {
       />
     ),
     fullWidthContainer: ({ node }) => {
-      return (
-        <FullWidthContainer {...node} />
-      )
+      return <FullWidthContainer {...node} />
     },
     image: ({ node }) => {
       return (
