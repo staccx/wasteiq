@@ -9,7 +9,7 @@ export default {
       name: "path",
       title: "Path",
       options: {
-        source: "name",
+        source: "name.en",
         maxLength: 96,
         auto: true
       },
