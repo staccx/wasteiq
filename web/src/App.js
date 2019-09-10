@@ -21,7 +21,7 @@ class App extends Component {
           texts={{}}
           logLevel={5}
           languages={["en, nb"]}
-          language={"en"}
+          language={"nb"}
         >
           <GlobalStyle />
           <WebFonts />
