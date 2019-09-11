@@ -15,6 +15,18 @@ export default {
       name: "partnerUrl",
       type: "url"
     },
+    {
+      title: "Partner status",
+      name: "partnerStatus",
+      type: "string",
+      options: {
+        list: [
+          { title: "Certified integration", value: "certified-integration" },
+          { title: "Planned integration", value: "planned-integration" },
+          { title: "R&D collaboration", value: "r-and-d-collaboration" }
+        ]
+      }
+    },
     { type: "localeRichText", name: "description", title: "Description" }
   ],
   preview: {
