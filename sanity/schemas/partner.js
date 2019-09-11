@@ -11,21 +11,11 @@ export default {
       options: { hotspot: true }
     },
     {
-      type: "slug",
-      name: "path",
-      title: "Path",
-      options: {
-        source: "name.en",
-        maxLength: 96,
-        auto: true
-      },
-      validation: Rule => Rule.required()
+      title: "URL to partner site",
+      name: "partnerUrl",
+      type: "url"
     },
-    {
-      type: "blockContent",
-      name: "blocks",
-      title: "Blocks"
-    }
+    { type: "localeRichText", name: "description", title: "Description" }
   ],
   preview: {
     select: {
