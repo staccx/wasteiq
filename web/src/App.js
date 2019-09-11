@@ -8,8 +8,9 @@ import PageLayout from "./components/PageLayout/PageLayout"
 import Footer from "./components/Footer/Footer"
 import Routes from "./Routes"
 
-const getLanguage = path => (path.includes("no") ? "nb" : "en")
-const language = getLanguage(window.location.hostname)
+// TODO enable dynamic language picker.
+// const getLanguage = path => (path.includes("no") ? "nb" : "en")
+// const language = getLanguage(window.location.hostname)
 
 class App extends Component {
   render() {
