@@ -15,6 +15,11 @@ export default {
         }
       ]
     },
+    {
+      type: "localeText",
+      name: "lede",
+      title: "Lede"
+    },
     { type: "localeRichText", name: "description", title: "Description" }
   ],
   preview: {

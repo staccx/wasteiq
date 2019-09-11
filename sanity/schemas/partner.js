@@ -21,6 +21,11 @@ export default {
       title: "Partner status",
       to: [{ type: "partnerStatus" }]
     },
+    {
+      type: "localeText",
+      name: "lede",
+      title: "Lede"
+    },
     { type: "localeRichText", name: "description", title: "Description" }
   ],
   preview: {
