@@ -19,6 +19,7 @@ const serializer = {
       <Hero
         heading={t(node.title)}
         lede={t(node.lede)}
+        image={node.image}
         buttons={node.buttons}
         key={node._key}
       />
