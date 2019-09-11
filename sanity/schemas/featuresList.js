@@ -21,6 +21,11 @@ export default {
               type: "localeText",
               title: "Body",
               name: "body"
+            },
+            {
+              type: "image",
+              name: "image",
+              options: { hotspot: true }
             }
           ],
           preview: {

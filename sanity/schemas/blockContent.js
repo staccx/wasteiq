@@ -14,6 +14,7 @@ export default {
     { type: "hero" },
     { type: "partnersBlock" },
     { type: "features" },
+    { type: "cardFeatures" },
     { type: "callToAction" },
     { type: "fullWidthContainer" }
   ]

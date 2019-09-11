@@ -38,6 +38,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/bleedValues.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/partnersBlock.js"
     },
     {
@@ -87,6 +91,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/features.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/cardFeatures.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
