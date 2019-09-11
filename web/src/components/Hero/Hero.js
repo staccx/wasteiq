@@ -15,6 +15,10 @@ const Hero = ({ heading, lede, buttons }) => {
   )
 }
 
-const Outer = styled.div``
+const Outer = styled.div`
+  h1 {
+    font-weight: bold;
+  }
+`
 
 export default Hero

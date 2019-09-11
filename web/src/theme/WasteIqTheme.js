@@ -87,13 +87,13 @@ const fontWeight = {
 }
 
 const fontFamily = {
-  heading: "IBM Plex Mono",
+  heading: "IBM Plex Sans",
   body: "IBM Plex Sans"
 }
 
 const webfonts = {
   google: {
-    families: ["IBM Plex Sans:400", "IBM Plex Mono:300,400,600"]
+    families: ["IBM Plex Sans:300,400,600,700", "IBM Plex Mono:300,400,600"]
   }
 }
 
