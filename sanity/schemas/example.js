@@ -5,17 +5,6 @@ export default {
   fields: [
     { type: "localeString", name: "name", title: "Name" },
     {
-      type: "slug",
-      name: "path",
-      title: "Path",
-      options: {
-        source: "name.en",
-        maxLength: 96,
-        auto: true
-      },
-      validation: Rule => Rule.required()
-    },
-    {
       type: "array",
       name: "relatedPartners",
       title: "Partners",
@@ -26,11 +15,7 @@ export default {
         }
       ]
     },
-    {
-      type: "blockContent",
-      name: "blocks",
-      title: "Blocks"
-    }
+    { type: "localeRichText", name: "description", title: "Description" }
   ],
   preview: {
     select: {
