@@ -14,6 +14,11 @@ export default {
       title: "Lede"
     },
     {
+      name: "image",
+      title: "Image",
+      type: "image"
+    },
+    {
       type: "array",
       name: "buttons",
       title: "Buttons",
