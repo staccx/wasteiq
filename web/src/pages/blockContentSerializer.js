@@ -52,6 +52,14 @@ const serializer = {
         buttons={node.buttons}
       />
     ),
+    cardFeatures: ({ node }) => (
+      <Features
+        heading={t(node.title)}
+        lede={t(node.lede)}
+        features={node.features}
+        buttons={node.buttons}
+      />
+    ),
     callToAction: ({ node }) => (
       <CallToAction
         buttons={node.buttons}
