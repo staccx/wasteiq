@@ -30,6 +30,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/partnerStatus.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/example.js"
     },
     {

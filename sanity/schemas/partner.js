@@ -16,27 +16,25 @@ export default {
       type: "url"
     },
     {
-      title: "Partner status",
+      type: "reference",
       name: "partnerStatus",
-      type: "string",
-      options: {
-        list: [
-          { title: "Certified integration", value: "certified-integration" },
-          { title: "Planned integration", value: "planned-integration" },
-          { title: "R&D collaboration", value: "r-and-d-collaboration" }
-        ]
-      }
+      title: "Partner status",
+      to: [{ type: "partnerStatus" }]
     },
     { type: "localeRichText", name: "description", title: "Description" }
   ],
   preview: {
     select: {
-      title: "name.en"
+      title: "name.en",
+      partnerLogo: "partnerLogo",
+      partnerStatus: "partnerStatus.name.en"
     },
     prepare(selection, options) {
-      const { title } = selection
+      const { title, partnerLogo, partnerStatus } = selection
       return {
-        title: title
+        title: title,
+        subtitle: partnerStatus,
+        media: partnerLogo
       }
     }
   }
