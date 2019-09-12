@@ -57,6 +57,7 @@ const BodyStyles = styled.div`
 
   ul {
     list-style-type: disc;
+    margin-left 20px;
   }
 
   a {

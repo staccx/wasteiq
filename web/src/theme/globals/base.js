@@ -12,20 +12,20 @@ export default css`
   }
 
   h1 {
-    font-weight: 400;
+    font-weight: bold;
     line-height: 1.2;
   }
 
   h2,
   h3 {
-    font-weight: 300;
+    font-weight: bold;
     line-height: 1.3;
   }
 
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: bold;
     line-height: 1.4;
   }
 `
