@@ -58,6 +58,7 @@ const serializer = {
         lede={t(node.lede)}
         features={node.features}
         buttons={node.buttons}
+        image={node.image}
       />
     ),
     callToAction: ({ node }) => (
