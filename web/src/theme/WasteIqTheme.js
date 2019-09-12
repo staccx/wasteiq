@@ -14,7 +14,7 @@ import { HeadingVariants } from "./variants/Heading.Variants"
 import { ListVariants } from "./variants/List.Variants"
 import { DividerVariants } from "./variants/Divider.Variants"
 
-const borderRadius = "0"
+const borderRadius = "34px"
 
 const targetSize = {
   small: "36px",
@@ -63,7 +63,8 @@ const color = {
   pinkLight: "#FFD6D6",
   apricot: "#EF8665",
   apricotLight: "#FCE7E0",
-  link: "#101010"
+  link: "#101010",
+  purple: "#7065B9"
 }
 
 const font = {

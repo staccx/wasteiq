@@ -1,8 +1,21 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { SanityDocument } from "@staccx/sanity"
-import { ItemGroup, Button } from "@staccx/base"
-import {i18nInstance} from "@staccx/i18n"
+import { ItemGroup, theming } from "@staccx/base"
+import { i18nInstance } from "@staccx/i18n"
+import styled from "styled-components"
+
+const Button = styled.a`
+  color: ${theming.color("white")};
+  text-decoration: none;
+  border-radius: ${theming.borderRadius()};
+  padding: ${theming.spacing("small")} ${theming.spacing("medium")};
+  background-color: #7065b9;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #a396f5;
+  }
+`
 
 const ButtonGroup = ({ buttons }) => {
   return (
@@ -10,12 +23,7 @@ const ButtonGroup = ({ buttons }) => {
       {buttons.map(button => {
         if (button._type === "buttonLink") {
           return (
-            <Button
-              color={button.color}
-              as={"a"}
-              href={button.url}
-              key={button._key}
-            >
+            <Button href={button.url} key={button._key}>
               {i18nInstance.convert(button.text)}
             </Button>
           )
@@ -27,12 +35,7 @@ const ButtonGroup = ({ buttons }) => {
                 return null
               }
               return (
-                <Button
-                  color={button.color}
-                  as={Link}
-                  to={document.path}
-                  key={button._key}
-                >
+                <Button as={Link} to={document.path} key={button._key}>
                   {i18nInstance.convert(button.text)}
                 </Button>
               )
