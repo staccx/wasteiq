@@ -23,6 +23,11 @@ export default {
               name: "body"
             },
             {
+              type: "localeRichText",
+              title: "Body",
+              name: "content"
+            },
+            {
               type: "image",
               name: "image",
               options: { hotspot: true }
