@@ -8,6 +8,7 @@ import Story from "../components/Story/Story"
 import Hero from "../components/Hero/Hero"
 import RichText from "../components/RichText/RichText"
 import Features from "../components/Features/Features"
+import Partners from "../components/Partners/Partners"
 import CallToAction from "../components/CallToAction/CallToAction"
 import FullWidthContainer from "../components/FullWidthContainer/FullWidthContainer"
 
@@ -25,10 +26,11 @@ const serializer = {
       />
     ),
     partnersBlock: ({ node }) => (
-      <Hero
+      <Partners
         heading={t(node.title)}
         lede={t(node.lede)}
         buttons={node.buttons}
+        partners={node.relatedPartners}
         key={node._key}
       />
     ),
