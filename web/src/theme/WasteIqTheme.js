@@ -43,7 +43,7 @@ const spacing = {
 }
 
 const color = {
-  bg: "#fff",
+  bg: "#FAFAF9",
   primary: "#101010",
   gray: "#B3B3B3",
   text: "#101010",
