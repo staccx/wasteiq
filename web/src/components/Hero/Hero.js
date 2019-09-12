@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { SanityImage } from "@staccx/sanity"
-import { Heading, Paragraph, Layout } from "@staccx/base"
+import { Heading, Paragraph, Layout, theming } from "@staccx/base"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
 
 const Hero = ({ heading, lede, buttons, image }) => {
@@ -11,8 +11,8 @@ const Hero = ({ heading, lede, buttons, image }) => {
         {heading && <Heading level={1}>{heading}</Heading>}
         {lede && <Paragraph variant={"lede"}>{lede}</Paragraph>}
         {buttons && <ButtonGroup buttons={buttons} />}
-        {image && <SanityImage image={image} />}
       </Layout>
+      <HeroImage>{image && <SanityImage image={image} />}</HeroImage>
     </Outer>
   )
 }
@@ -20,6 +20,28 @@ const Hero = ({ heading, lede, buttons, image }) => {
 const Outer = styled.div`
   h1 {
     font-weight: bold;
+  }
+
+  @media only screen and (min-width: ${theming.wrapper("medium")}) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div:first-child {
+      flex-basis: 45%;
+    }
+    > div:last-child {
+      flex-basis: 55%;
+    }
+  }
+`
+
+const HeroImage = styled.div`
+  display: none;
+
+  @media only screen and (min-width: ${theming.wrapper("medium")}) {
+    display: block;
+    padding-left: 50px;
   }
 `
 
