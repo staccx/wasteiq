@@ -11,7 +11,7 @@ export default {
     {
       type: "localeText",
       name: "lede",
-      title: "Lede"
+      title: "Lead paragraph"
     },
     {
       name: "image",
