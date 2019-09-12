@@ -8,6 +8,7 @@ import Story from "../components/Story/Story"
 import Hero from "../components/Hero/Hero"
 import RichText from "../components/RichText/RichText"
 import Features from "../components/Features/Features"
+import CardFeatures from "../components/CardFeatures/CardFeatures"
 import Partners from "../components/Partners/Partners"
 import CallToAction from "../components/CallToAction/CallToAction"
 import FullWidthContainer from "../components/FullWidthContainer/FullWidthContainer"
@@ -55,7 +56,7 @@ const serializer = {
       />
     ),
     cardFeatures: ({ node }) => (
-      <Features
+      <CardFeatures
         heading={t(node.title)}
         lede={t(node.lede)}
         features={node.features}
