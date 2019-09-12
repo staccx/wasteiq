@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Layout, Divider } from "@staccx/base"
+import { Layout, theming } from "@staccx/base"
 import { SanityQuery, SanityImage } from "@staccx/sanity"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
@@ -9,10 +9,19 @@ import Lede from "../Lede/Lede"
 
 const ImageContainer = styled.div`
   text-align: center;
+  background-color: ${theming.color("bg")};
+  img {
+    padding-top: 40px;
+    width: 100%;
+    max-width: 180px;
+    filter: grayscale(100%);
+    mix-blend-mode: color-burn;
+  }
 `
 
 const PartnersWrapper = styled.div`
   text-align: center;
+  padding-bottom: 50px;
 `
 
 const Partners = ({ heading, lede, partners = [], buttons }) => {
@@ -20,7 +29,7 @@ const Partners = ({ heading, lede, partners = [], buttons }) => {
     <Layout as={"article"}>
       <PartnersWrapper>
         <header>
-          <Layout rowGap={"small"}>
+          <Layout rowGap={"medium"}>
             {heading && (
               <Heading variant="lined" level={2}>
                 {heading}
