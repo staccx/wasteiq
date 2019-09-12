@@ -27,7 +27,8 @@ const wrapper = {
   mediumMinusOne: "1049px",
   mediumSpacingLarge: "1146px",
   large: "1200px",
-  breakout: "640px"
+  breakout: "640px",
+  maxTextWidth: "750px"
 }
 
 const spacing = {
