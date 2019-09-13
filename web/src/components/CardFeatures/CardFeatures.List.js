@@ -16,7 +16,16 @@ const List = styled(ListBase)`
   img {
     width: 100%;
   }
+
+  li {
+    max-width: 350px;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+
   @media only screen and (min-width: ${theming.wrapper("medium")}) {
+    justify-content: space-between;
     li {
       flex-basis: calc(33% - 24px);
     }
@@ -26,7 +35,7 @@ const List = styled(ListBase)`
 const t = val => i18nInstance.convert(val)
 const FeaturesList = ({ features }) => {
   return (
-    <List variant={"columns"}>
+    <List>
       {features.map(feature => (
         <li key={feature._key}>
           <Layout rowGap={"none"}>
