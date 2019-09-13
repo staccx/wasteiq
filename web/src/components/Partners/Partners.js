@@ -4,6 +4,7 @@ import { Layout, theming, Paragraph, Heading } from "@staccx/base"
 import { SanityQuery, SanityImage } from "@staccx/sanity"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
+import CenterContent from "../CenterContent/CenterContent"
 
 const ImageContainer = styled.div`
   text-align: center;
@@ -17,39 +18,31 @@ const ImageContainer = styled.div`
   }
 `
 
-const PartnersWrapper = styled.div`
-  text-align: center;
-  padding-bottom: 50px;
-`
-
 const Partners = ({ heading, lede, partners = [], buttons }) => {
   return (
     <Layout as={"article"}>
-      <PartnersWrapper>
-        <header>
-          <Layout rowGap={"medium"}>
-            {heading && (
-              <Heading variant="lined" level={2}>
-                {heading}
-              </Heading>
-            )}
+      <header>
+        <Layout rowGap={"medium"}>
+          <CenterContent>
+            {heading && <Heading level={2}>{heading}</Heading>}
             {lede && <Paragraph variant="lede">{lede}</Paragraph>}
-            {buttons && <ButtonGroup buttons={buttons} />}
-          </Layout>
-          <SanityQuery
-            id={"partners-block"}
-            query={buildPartnerQuery(partners)}
-          >
-            {({ result = [] }) => {
-              return result.map(({ _id, partnerLogo }) => (
-                <ImageContainer key={_id}>
-                  <SanityImage image={partnerLogo} />
-                </ImageContainer>
-              ))
-            }}
-          </SanityQuery>
-        </header>
-      </PartnersWrapper>
+          </CenterContent>
+        </Layout>
+        <SanityQuery id={"partners-block"} query={buildPartnerQuery(partners)}>
+          {({ result = [] }) => {
+            return result.map(({ _id, partnerLogo }) => (
+              <ImageContainer key={_id}>
+                <SanityImage image={partnerLogo} />
+              </ImageContainer>
+            ))
+          }}
+        </SanityQuery>
+        {buttons && (
+          <CenterContent>
+            <ButtonGroup buttons={buttons} />
+          </CenterContent>
+        )}
+      </header>
     </Layout>
   )
 }

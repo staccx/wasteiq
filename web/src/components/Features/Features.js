@@ -4,34 +4,26 @@ import { Layout, Paragraph, Heading } from "@staccx/base"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
 import FeaturesList from "./Features.List"
-
-const Header = styled.header`
-  text-align: center;
-`
-
-const ButtonGroupWrapper = styled.div`
-  a {
-    margin-left: auto;
-    margin-right: auto;
-  }
-`
+import CenterContent from "../CenterContent/CenterContent"
 
 const Features = ({ heading, lede, features, buttons }) => {
   return (
     <Layout as={"article"}>
-      <Header>
+      <header>
         <Layout rowGap={"large"}>
-          {heading && <Heading level={2}>{heading}</Heading>}
-          {lede && <Paragraph variant="lede">{lede}</Paragraph>}
+          <CenterContent>
+            {heading && <Heading level={2}>{heading}</Heading>}
+            {lede && <Paragraph variant="lede">{lede}</Paragraph>}
+          </CenterContent>
         </Layout>
-      </Header>
+      </header>
       {features &&
         features.features && <FeaturesList features={features.features} />}
 
       {buttons && (
-        <ButtonGroupWrapper>
+        <CenterContent>
           <ButtonGroup buttons={buttons} />
-        </ButtonGroupWrapper>
+        </CenterContent>
       )}
     </Layout>
   )
