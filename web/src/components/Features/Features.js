@@ -11,14 +11,25 @@ const Header = styled.header`
   text-align: center;
 `
 
+const ButtonGroupWrapper = styled.div`
+  a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+`
+
 const Features = ({ heading, lede, features, buttons }) => {
   return (
     <Layout as={"article"}>
       <Header>
-        <Layout rowGap={"small"}>
+        <Layout rowGap={"large"}>
           {heading && <Heading level={2}>{heading}</Heading>}
           {lede && <Lede>{lede}</Lede>}
-          {buttons && <ButtonGroup buttons={buttons} />}
+          {buttons && (
+            <ButtonGroupWrapper>
+              <ButtonGroup buttons={buttons} />
+            </ButtonGroupWrapper>
+          )}
         </Layout>
       </Header>
       {features &&
