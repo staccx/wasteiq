@@ -22,12 +22,12 @@ const Partners = ({ heading, lede, partners = [], buttons }) => {
   return (
     <Layout as={"article"}>
       <header>
-        <Layout rowGap={"medium"}>
-          <CenterContent>
+        <CenterContent>
+          <Layout rowGap={"medium"}>
             {heading && <Heading level={2}>{heading}</Heading>}
             {lede && <Paragraph variant="lede">{lede}</Paragraph>}
-          </CenterContent>
-        </Layout>
+          </Layout>
+        </CenterContent>
         <SanityQuery id={"partners-block"} query={buildPartnerQuery(partners)}>
           {({ result = [] }) => {
             return result.map(({ _id, partnerLogo }) => (
