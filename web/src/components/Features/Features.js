@@ -7,7 +7,7 @@ import CenterContent from "../CenterContent/CenterContent"
 
 const Features = ({ heading, lede, features, buttons }) => {
   return (
-    <Layout as={"article"}>
+    <Layout as={"article"} rowGap={"large"}>
       <header>
         <CenterContent>
           <Layout rowGap={"large"}>
@@ -18,7 +18,6 @@ const Features = ({ heading, lede, features, buttons }) => {
       </header>
       {features &&
         features.features && <FeaturesList features={features.features} />}
-
       {buttons && (
         <CenterContent>
           <ButtonGroup buttons={buttons} />

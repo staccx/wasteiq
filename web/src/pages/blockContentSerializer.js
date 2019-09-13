@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import BlockContent from "@sanity/block-content-to-react"
 import { SanityImage } from "@staccx/sanity"
-import { Layout } from "@staccx/base"
+import { Layout, theming } from "@staccx/base"
 import { i18nInstance } from "@staccx/i18n"
 import Story from "../components/Story/Story"
 import Hero from "../components/Hero/Hero"
@@ -13,9 +13,18 @@ import Partners from "../components/Partners/Partners"
 import CallToAction from "../components/CallToAction/CallToAction"
 import FullWidthContainer from "../components/FullWidthContainer/FullWidthContainer"
 
+const TweakedLayout = styled(Layout)`
+  grid-row-gap: ${theming.spacing.large};
+  @media (min-width: ${theming.wrapper("medium")}) {
+    grid-row-gap: ${theming.spacing.huge};
+  }
+`
+
 const t = val => i18nInstance.convert(val)
 const serializer = {
-  container: props => <Layout rowGap="grid">{props.children}</Layout>,
+  container: props => (
+    <TweakedLayout rowGap="large">{props.children}</TweakedLayout>
+  ),
   types: {
     hero: ({ node }) => (
       <Hero
