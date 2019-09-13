@@ -13,7 +13,9 @@ const Hero = ({ heading, lede, buttons, image }) => {
         {lede && <Lede variant={"lede"}>{lede}</Lede>}
         {buttons && <ButtonGroup buttons={buttons} />}
       </Layout>
-      <HeroImage>{image && <SanityImage image={image} />}</HeroImage>
+      <HeroImage>
+        {image && <SanityImage image={image} width={700} />}
+      </HeroImage>
     </Outer>
   )
 }
