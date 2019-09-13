@@ -14,13 +14,13 @@ export default () =>
               .showIcons(false)
               .items([...S.documentTypeListItems().filter(isMetaData)])
           ),
-        ...S.documentTypeListItems().filter(listItem => !isHiddenType(listItem))
+        ...S.documentTypeListItems().filter(isRestOfTypes)
       ].sort(sortByName)
     )
 
 const isMetaData = listItem => ["partnerStatus"].includes(listItem.getId())
 
-const isHiddenType = listItem => isMetaData(listItem)
+const isRestOfTypes = listItem => !isMetaData(listItem)
 
 const sortByName = (listItemA, listItemB) => {
   const a = listItemA.getId()
