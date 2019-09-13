@@ -34,8 +34,9 @@ const ButtonGroup = ({ buttons }) => {
               if (!document) {
                 return null
               }
+              const { path: { current } = {} } = document
               return (
-                <Button as={Link} to={document.path} key={button._key}>
+                <Button as={Link} to={current} key={button._key}>
                   {i18nInstance.convert(button.text)}
                 </Button>
               )
