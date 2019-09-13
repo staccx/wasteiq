@@ -14,9 +14,10 @@ const FeaturesList = ({ features }) => {
         <li key={feature._key}>
           <Layout rowGap={"none"}>
             <FeaturesCard>
-              {feature.image && (
-                <SanityImage image={feature.image} width={200} />
-              )}
+              {feature.image &&
+                feature.image.asset && (
+                  <SanityImage image={feature.image} width={200} />
+                )}
               <div>
                 {feature.title && (
                   <Heading level={4}>{t(feature.title)}</Heading>
