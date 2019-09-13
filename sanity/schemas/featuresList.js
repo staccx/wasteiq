@@ -18,11 +18,6 @@ export default {
               name: "title"
             },
             {
-              type: "localeText",
-              title: "Body",
-              name: "body"
-            },
-            {
               type: "localeRichText",
               title: "Body",
               name: "content"
