@@ -4,7 +4,9 @@ import { Paragraph, theming } from "@staccx/base"
 export const ParagraphVariants = theming.createVariants(
   {
     lede: css`
-      line-height: 1.6;
+      max-width: ${theming.wrapper("maxTextWidth")};
+      font-weight: 300;
+      font-size: 20px;
     `
   },
   Paragraph.themeProps.paragraph

@@ -1,11 +1,10 @@
 import React from "react"
 
-import { Layout, theming } from "@staccx/base"
+import { Layout, theming, Paragraph } from "@staccx/base"
 import { SanityQuery, SanityImage } from "@staccx/sanity"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
 import Heading from "../Heading/Heading"
-import Lede from "../Lede/Lede"
 
 const ImageContainer = styled.div`
   text-align: center;
@@ -35,7 +34,7 @@ const Partners = ({ heading, lede, partners = [], buttons }) => {
                 {heading}
               </Heading>
             )}
-            {lede && <Lede>{lede}</Lede>}
+            {lede && <Paragraph variant="lede">{lede}</Paragraph>}
             {buttons && <ButtonGroup buttons={buttons} />}
           </Layout>
           <SanityQuery

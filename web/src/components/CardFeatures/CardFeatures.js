@@ -1,10 +1,9 @@
 import React from "react"
 
-import { Layout } from "@staccx/base"
+import { Layout, Paragraph } from "@staccx/base"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
 import Heading from "../Heading/Heading"
-import Lede from "../Lede/Lede"
 import CardFeaturesList from "./CardFeatures.List"
 
 const Header = styled.header`
@@ -17,7 +16,7 @@ const CardFeatures = ({ heading, lede, features, buttons }) => {
       <Header>
         <Layout rowGap={"small"}>
           {heading && <Heading level={2}>{heading}</Heading>}
-          {lede && <Lede>{lede}</Lede>}
+          {lede && <Paragraph variant="lede">{lede}</Paragraph>}
           {buttons && <ButtonGroup buttons={buttons} />}
         </Layout>
       </Header>

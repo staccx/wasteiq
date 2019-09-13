@@ -27,18 +27,18 @@ const Story = ({ color, icon, heading, lede, sellingPoints }) => {
         <StoryHeader>
           {heading && <Heading level={2}>{heading}</Heading>}
           {icon && (
-          <IconContainer>
-            <ThemeComponent
-              tagName={icon}
-              color={getIconColor(color)}
-              autoWidth
-            />
-          </IconContainer>
-      )}
+            <IconContainer>
+              <ThemeComponent
+                tagName={icon}
+                color={getIconColor(color)}
+                autoWidth
+              />
+            </IconContainer>
+          )}
         </StoryHeader>
         <div>
           <Layout rowGap={"gridSmall"}>
-            {lede && <Paragraph>{lede}</Paragraph>}
+            {lede && <Paragraph variant="lede">{lede}</Paragraph>}
             {sellingPoints && (
               <div>
                 <Layout rowGap={"medium"}>

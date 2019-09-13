@@ -1,10 +1,9 @@
 import React from "react"
 
-import { Layout } from "@staccx/base"
+import { Layout, Paragraph } from "@staccx/base"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
 import Heading from "../Heading/Heading"
-import Lede from "../Lede/Lede"
 import FeaturesList from "./Features.List"
 
 const Header = styled.header`
@@ -24,7 +23,7 @@ const Features = ({ heading, lede, features, buttons }) => {
       <Header>
         <Layout rowGap={"large"}>
           {heading && <Heading level={2}>{heading}</Heading>}
-          {lede && <Lede>{lede}</Lede>}
+          {lede && <Paragraph variant="lede">{lede}</Paragraph>}
         </Layout>
       </Header>
       {features &&

@@ -35,8 +35,8 @@ const CallToAction = ({
       <Layout rowGap={"large"}>
         <header>
           <Layout>
-  {heading && <Heading level={2}>{t(heading)}</Heading>}
-            {lede && <Paragraph>{t(lede)}</Paragraph>}
+            {heading && <Heading level={2}>{t(heading)}</Heading>}
+            {lede && <Paragraph variant="lede">{t(lede)}</Paragraph>}
             {buttons && <ButtonGroup buttons={buttons} />}
           </Layout>
         </header>

@@ -1,16 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import { SanityImage } from "@staccx/sanity"
-import { Heading, Layout, theming } from "@staccx/base"
+import { Heading, Layout, theming, Paragraph } from "@staccx/base"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
-import Lede from "../Lede/Lede"
 
 const Hero = ({ heading, lede, buttons, image }) => {
   return (
     <Outer>
       <Layout rowGap={"gridSmall"}>
         {heading && <Heading level={1}>{heading}</Heading>}
-        {lede && <Lede variant={"lede"}>{lede}</Lede>}
+        {lede && <Paragraph variant={"lede"}>{lede}</Paragraph>}
         {buttons && <ButtonGroup buttons={buttons} />}
       </Layout>
       <HeroImage>
