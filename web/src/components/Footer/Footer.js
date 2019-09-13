@@ -71,15 +71,28 @@ const LogoLink = styled(Link)`
 const MenuItems = styled.div`
   display: table;
 
-  > *:not(:first-child) {
-    margin-left: ${theming.spacing.medium};
+  > * {
+    padding-bottom: 24px;
+    display: block;
+  }
+
+  > *:first-child {
+    padding-top: 24px;
+  }
+
+  @media (min-width: ${theming.wrapper("medium")}) {
+    > * {
+      display: inline;
+    }
+    > *:not(:first-child) {
+      margin-left: ${theming.spacing.medium};
+    }
   }
 `
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${theming.color.white};
-
   &:hover,
   &:active,
   &:focus {
@@ -91,6 +104,12 @@ const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
   padding: ${theming.spacing("gridSmall")} 0;
+  flex-flow: column;
+
+  @media (min-width: ${theming.wrapper("medium")}) {
+    margin-left: -${theming.spacing.large};
+    flex-flow: row;
+  }
 `
 
 export default Footer
