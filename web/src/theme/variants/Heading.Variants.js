@@ -15,6 +15,8 @@ const getResponsiveSize = level => {
 export const HeadingVariants = theming.createVariants(
   {
     [theming.VARIANT_DEFAULT]: css`
+      font-weight: bold;
+      max-width: ${theming.wrapper("maxTextWidth")};
       @media (max-width: ${theming.wrapper("medium")}) {
         font-size: ${p => getResponsiveSize(p.level)};
       }

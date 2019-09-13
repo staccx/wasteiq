@@ -1,10 +1,9 @@
 import React from "react"
 
-import { Layout, theming, Paragraph } from "@staccx/base"
+import { Layout, theming, Paragraph, Heading } from "@staccx/base"
 import { SanityQuery, SanityImage } from "@staccx/sanity"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
-import Heading from "../Heading/Heading"
 
 const ImageContainer = styled.div`
   text-align: center;

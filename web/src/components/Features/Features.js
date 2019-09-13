@@ -1,9 +1,8 @@
 import React from "react"
 
-import { Layout, Paragraph } from "@staccx/base"
+import { Layout, Paragraph, Heading } from "@staccx/base"
 import styled from "styled-components"
 import ButtonGroup from "../ButtonGroup/ButtonGroup"
-import Heading from "../Heading/Heading"
 import FeaturesList from "./Features.List"
 
 const Header = styled.header`
