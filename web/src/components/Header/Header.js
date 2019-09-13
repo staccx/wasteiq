@@ -9,7 +9,6 @@ import { i18nInstance } from "@staccx/i18n"
 
 const t = val => i18nInstance.convert(val)
 
-
 const Header = () => {
   return (
     <Outer>
@@ -86,7 +85,7 @@ const LogoLink = styled(Link)`
     outline: none;
   }
 
-  @media (min-width: 1190px) {
+  @media (min-width: ${theming.wrapper("medium")}) {
     margin-left: -${theming.spacing.large};
   }
 `

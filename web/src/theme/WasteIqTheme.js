@@ -24,7 +24,7 @@ const targetSize = {
 const wrapper = {
   small: "420px",
   medium: "1200px",
-  mediumMinusOne: "1049px",
+  mediumMinusOne: "1199px",
   mediumSpacingLarge: "1146px",
   large: "1200px",
   breakout: "640px",
