@@ -25,15 +25,16 @@ const Features = ({ heading, lede, features, buttons }) => {
         <Layout rowGap={"large"}>
           {heading && <Heading level={2}>{heading}</Heading>}
           {lede && <Lede>{lede}</Lede>}
-          {buttons && (
-            <ButtonGroupWrapper>
-              <ButtonGroup buttons={buttons} />
-            </ButtonGroupWrapper>
-          )}
         </Layout>
       </Header>
       {features &&
         features.features && <FeaturesList features={features.features} />}
+
+      {buttons && (
+        <ButtonGroupWrapper>
+          <ButtonGroup buttons={buttons} />
+        </ButtonGroupWrapper>
+      )}
     </Layout>
   )
 }
