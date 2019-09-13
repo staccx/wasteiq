@@ -3,13 +3,7 @@ import styled from "styled-components"
 import { SanityImage } from "@staccx/sanity"
 import { i18nInstance } from "@staccx/i18n"
 import BlockContent from "@sanity/block-content-to-react"
-import {
-  List as ListBase,
-  Heading,
-  Layout,
-  Paragraph,
-  theming
-} from "@staccx/base"
+import { List as ListBase, Heading, Layout, theming } from "@staccx/base"
 import RichText from "../RichText/RichText"
 
 const List = styled(ListBase)`
@@ -40,11 +34,8 @@ const FeaturesList = ({ features }) => {
         <li key={feature._key}>
           <Layout rowGap={"none"}>
             {feature.image && <SanityImage image={feature.image} />}
-
             <FeaturesCard>
               {feature.title && <Heading level={3}>{t(feature.title)}</Heading>}
-              {feature.body &&
-                !feature.content && <Paragraph>{t(feature.body)}</Paragraph>}
               {feature.content && (
                 <RichText>
                   <BlockContent

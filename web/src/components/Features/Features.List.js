@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { SanityImage } from "@staccx/sanity"
-import { List, Heading, Paragraph, Layout, theming } from "@staccx/base"
+import { List, Heading, Layout, theming } from "@staccx/base"
 import { i18nInstance } from "@staccx/i18n"
 import BlockContent from "@sanity/block-content-to-react"
 import RichText from "../RichText/RichText"
@@ -22,8 +22,6 @@ const FeaturesList = ({ features }) => {
                 {feature.title && (
                   <Heading level={4}>{t(feature.title)}</Heading>
                 )}
-                {feature.body &&
-                  !feature.content && <Paragraph>{t(feature.body)}</Paragraph>}
                 {feature.content && (
                   <RichText>
                     <BlockContent
