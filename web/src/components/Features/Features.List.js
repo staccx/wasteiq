@@ -57,7 +57,8 @@ const FeaturesCard = styled.div`
     flex-wrap: nowrap;
   }
   @media only screen and (min-width: ${theming.wrapper.medium}) {
-    padding: ${theming.spacing.large};
+    padding: ${theming.spacing.medium};
+    padding-bottom: 0;
   }
 `
 
