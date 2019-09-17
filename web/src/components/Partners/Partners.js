@@ -7,14 +7,25 @@ import ButtonGroup from "../ButtonGroup/ButtonGroup"
 import CenterContent from "../CenterContent/CenterContent"
 
 const ImageContainer = styled.div`
-  text-align: center;
+  margin: 0 1em 0;
   background-color: ${theming.color("bg")};
   img {
-    padding-top: 40px;
+    padding-top: 10px;
     width: 100%;
     max-width: 180px;
     filter: grayscale(100%);
     mix-blend-mode: color-burn;
+  }
+`
+const PartnersWrapper = styled.div`
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:  wrap;
+  justify-content:  center;
+
+  margin: auto;
+
   }
 `
 
@@ -28,6 +39,8 @@ const Partners = ({ heading, lede, partners = [], buttons }) => {
             {lede && <Paragraph variant="lede">{lede}</Paragraph>}
           </Layout>
         </CenterContent>
+      </header>
+      <PartnersWrapper>
         <SanityQuery id={"partners-block"} query={buildPartnerQuery(partners)}>
           {({ result = [] }) => {
             return result.map(({ _id, partnerLogo }) => (
@@ -37,12 +50,12 @@ const Partners = ({ heading, lede, partners = [], buttons }) => {
             ))
           }}
         </SanityQuery>
-        {buttons && (
-          <CenterContent>
-            <ButtonGroup buttons={buttons} />
-          </CenterContent>
-        )}
-      </header>
+      </PartnersWrapper>
+      {buttons && (
+        <CenterContent>
+          <ButtonGroup buttons={buttons} />
+        </CenterContent>
+      )}
     </Layout>
   )
 }
