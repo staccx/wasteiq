@@ -13,7 +13,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@staccx/sanity-plugin-i18n"
+    "@staccx/sanity-plugin-i18n",
+    "@sanity/vision"
   ],
   "parts": [
     {
@@ -47,6 +48,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "./schemas/partnersBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/exampleBlock.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
