@@ -11,19 +11,21 @@ const ImageContainer = styled.div`
   background-color: ${theming.color("bg")};
   img {
     padding-top: 10px;
-    width: 100%;
-    max-width: 180px;
+
+    width: 180px;
+    height: auto;
     filter: grayscale(100%);
     mix-blend-mode: color-burn;
   }
 `
 const PartnersWrapper = styled.div`
+
   max-width: 800px;
   display: flex;
   flex-direction: row;
   flex-wrap:  wrap;
-  justify-content:  center;
-
+  justify-content:  space-around;
+  align-items: center
   margin: auto;
 
   }
