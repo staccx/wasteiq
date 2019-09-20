@@ -1,6 +1,6 @@
 export default {
   type: "object",
-  name: "exampleBlock",
+  name: "examplesBlock",
   title: "Examples",
   fields: [
     {

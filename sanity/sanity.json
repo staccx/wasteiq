@@ -51,7 +51,7 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "./schemas/exampleBlock.js"
+      "path": "./schemas/examplesBlock.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
