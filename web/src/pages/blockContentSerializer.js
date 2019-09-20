@@ -10,7 +10,6 @@ import RichText from "../components/RichText/RichText"
 import Features from "../components/Features/Features"
 import CardFeatures from "../components/CardFeatures/CardFeatures"
 import Partners from "../components/Partners/Partners"
-import Slider from "../components/Slider/Slider"
 import CallToAction from "../components/CallToAction/CallToAction"
 import FullWidthContainer from "../components/FullWidthContainer/FullWidthContainer"
 
@@ -42,14 +41,6 @@ const serializer = {
         lede={t(node.lede)}
         buttons={node.buttons}
         partners={node.relatedPartners}
-        key={node._key}
-      />
-    ),
-    exampleBlock: ({ node }) => (
-      <Slider
-        heading={t(node.title)}
-        lede={t(node.lede)}
-        examples={node.exampleListing || node.examples}
         key={node._key}
       />
     ),

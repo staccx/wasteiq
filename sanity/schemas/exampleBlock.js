@@ -15,7 +15,7 @@ export default {
     },
     {
       type: "array",
-      name: "examples",
+      name: "exampleListing",
       title: "Examples",
       of: [
         {
