@@ -17,6 +17,6 @@ export default {
     { type: "cardFeatures" },
     { type: "callToAction" },
     { type: "fullWidthContainer" },
-    { type: "exampleBlock" }
+    { type: "examplesBlock" }
   ]
 }

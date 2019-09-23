@@ -12,7 +12,7 @@ import CardFeatures from "../components/CardFeatures/CardFeatures"
 import Partners from "../components/Partners/Partners"
 import CallToAction from "../components/CallToAction/CallToAction"
 import FullWidthContainer from "../components/FullWidthContainer/FullWidthContainer"
-
+import Slider from "../components/Slider/Slider"
 const TweakedLayout = styled(Layout)`
   grid-row-gap: ${theming.spacing.large};
   @media (min-width: ${theming.wrapper("medium")}) {
@@ -41,6 +41,14 @@ const serializer = {
         lede={t(node.lede)}
         buttons={node.buttons}
         partners={node.relatedPartners}
+        key={node._key}
+      />
+    ),
+    examplesBlock: ({ node }) => (
+      <Slider
+        heading={t(node.title)}
+        lede={t(node.lede)}
+        examples={node.examples}
         key={node._key}
       />
     ),

@@ -1,6 +1,6 @@
 export default {
   type: "object",
-  name: "exampleBlock",
+  name: "examplesBlock",
   title: "Examples",
   fields: [
     {
@@ -15,7 +15,7 @@ export default {
     },
     {
       type: "array",
-      name: "exampleListing",
+      name: "examples",
       title: "Examples",
       of: [
         {
