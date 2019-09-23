@@ -4,6 +4,7 @@ import epitath from "epitath"
 import { Loading } from "@staccx/base"
 import { SanityQuery } from "@staccx/sanity"
 import Page from "./pages/Page"
+import ExamplePage from "./pages/ExamplePage"
 
 const Routes = epitath(function*({ change, inverted }) {
   const { result: pages } = yield (
@@ -24,14 +25,26 @@ const Routes = epitath(function*({ change, inverted }) {
           key={page._id}
           path={getPath(page)}
           exact
-          render={({ match, location }) => (
-            <Page
-              page={page}
-              match={match}
-              location={location}
-              change={change}
-            />
-          )}
+          render={({ match, location }) => {
+            if (page._type === "example") {
+              return (
+                <ExamplePage
+                  example={page}
+                  match={match}
+                  location={location}
+                  change={change}
+                />
+              )
+            }
+            return (
+              <Page
+                page={page}
+                match={match}
+                location={location}
+                change={change}
+              />
+            )
+          }}
         />
       ))}
     </Switch>
