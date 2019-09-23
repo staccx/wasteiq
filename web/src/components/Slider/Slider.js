@@ -10,11 +10,6 @@ import RichText from "../RichText/RichText"
 
 const t = val => i18nInstance.convert(val)
 
-const ExampleCard = styled.div`
-  border: 2px solid black;
-  background-color: ${theming.color("bg")};
-`
-
 const FeaturesCard = styled.div`
   margin: 0 6.7%;
   height: 100%
@@ -44,7 +39,7 @@ const Slider = ({ heading, lede, examples = [] }) => {
               <ItemsCarousel
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
-                numberOfCards={result.length - 1}
+                numberOfCards={1}
                 gutter={4}
                 leftChevron={<button>{"<"}</button>}
                 rightChevron={<button>{">"}</button>}
