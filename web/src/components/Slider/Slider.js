@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { Layout, theming, Paragraph, Heading } from "@staccx/base"
+import { Layout, Paragraph, Heading } from "@staccx/base"
 import { SanityQuery } from "@staccx/sanity"
 import styled from "styled-components"
 import { i18nInstance } from "@staccx/i18n"
@@ -29,7 +29,7 @@ const Slider = ({ heading, lede, examples = [] }) => {
           {lede && <Paragraph variant="lede">{lede}</Paragraph>}
         </Layout>
       </CenterContent>
-      {examples.length > 0 && (
+      {examples && (
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SanityQuery
             id={"examples-block"}
@@ -39,17 +39,18 @@ const Slider = ({ heading, lede, examples = [] }) => {
               <ItemsCarousel
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
-                numberOfCards={1}
+                numberOfCards={3}
                 gutter={4}
                 leftChevron={<button>{"<"}</button>}
                 rightChevron={<button>{">"}</button>}
                 chevronWidth={25}
                 showSlither
               >
-                {result.map(({ _id, name, lede }) => (
+                {result.map(({ _id, name, lede, slug }) => (
                   <FeaturesCard key={_id}>
                     {name && <Heading level={4}>{t(name)}</Heading>}{" "}
                     {lede && <RichText>{t(lede)}</RichText>}
+                    {slug && <button>{"Les mer"}</button>}
                   </FeaturesCard>
                 ))}
               </ItemsCarousel>
@@ -64,7 +65,7 @@ const Slider = ({ heading, lede, examples = [] }) => {
 const buildExamplesQuery = examples => {
   const query = `*[_id in [${examples
     .map(({ _ref }) => `'${_ref}'`)
-    .join(",")}]]{_id, name, lede}`
+    .join(",")}]]{_id, name, lede, slug}`
   return query
 }
 export default Slider
