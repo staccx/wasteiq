@@ -12,7 +12,7 @@ import CardFeatures from "../components/CardFeatures/CardFeatures"
 import Partners from "../components/Partners/Partners"
 import CallToAction from "../components/CallToAction/CallToAction"
 import FullWidthContainer from "../components/FullWidthContainer/FullWidthContainer"
-
+import Slider from "../components/Slider/Slider"
 const TweakedLayout = styled(Layout)`
   grid-row-gap: ${theming.spacing.large};
   @media (min-width: ${theming.wrapper("medium")}) {
