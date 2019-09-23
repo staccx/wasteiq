@@ -4,6 +4,7 @@ export default {
   title: "Examples",
   fields: [
     { type: "localeString", name: "name", title: "Name" },
+    { type: "localeSlug", name: "slug", title: "Slug" },
     {
       type: "array",
       name: "relatedPartners",

@@ -114,6 +114,10 @@
       "path": "./schemas/fullWidthContainer.js"
     },
     {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "./schemas/localeSlug.js"
+    },
+    {
       "implements": "part:@staccx/i18n/languages",
       "path": "./schemas/languages.js"
     },
