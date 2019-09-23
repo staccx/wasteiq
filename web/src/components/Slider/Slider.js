@@ -7,6 +7,7 @@ import { i18nInstance } from "@staccx/i18n"
 import CenterContent from "../CenterContent/CenterContent"
 import ItemsCarousel from "react-items-carousel"
 import RichText from "../RichText/RichText"
+import { useMediaQuery } from "react-responsive"
 
 const t = val => i18nInstance.convert(val)
 
@@ -20,7 +21,9 @@ const FeaturesCard = styled.div`
 
 const Slider = ({ heading, lede, examples = [] }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(0)
-
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 600px)"
+  })
   return (
     <Layout as={"article"}>
       <CenterContent>
