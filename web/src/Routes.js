@@ -20,43 +20,42 @@ const Routes = epitath(function*({ change, inverted }) {
 
   return (
     <Switch>
-      {pages.map(page => (
-        <Route
-          key={page._id}
-          path={getPath(page)}
-          exact
-          render={({ match, location }) => {
-            if (page._type === "example") {
-              return (
+      {pages.map(page => {
+        if (page._type === "example") {
+          return (
+            <Route
+              key={page._id}
+              path={`/examples/${page.path.current}`}
+              exact
+              render={({ match, location }) => (
                 <ExamplePage
                   example={page}
                   match={match}
                   location={location}
                   change={change}
                 />
-              )
-            }
-            return (
+              )}
+            />
+          )
+        }
+        return (
+          <Route
+            key={page._id}
+            path={page.path.current}
+            exact
+            render={({ match, location }) => (
               <Page
                 page={page}
                 match={match}
                 location={location}
                 change={change}
               />
-            )
-          }}
-        />
-      ))}
+            )}
+          />
+        )
+      })}
     </Switch>
   )
 })
-
-const getPath = ({ _type, path: { current } = {} }) => {
-  if (_type === "example") {
-    const result = `/examples/${current}`
-    return result
-  }
-  return current
-}
 
 export default Routes
