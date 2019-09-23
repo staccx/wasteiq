@@ -44,6 +44,14 @@ const serializer = {
         key={node._key}
       />
     ),
+    examplesBlock: ({ node }) => (
+      <Slider
+        heading={t(node.title)}
+        lede={t(node.lede)}
+        examples={node.examples}
+        key={node._key}
+      />
+    ),
     localeRichText: ({ node }) => {
       return (
         <RichText>
