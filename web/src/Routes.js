@@ -21,7 +21,10 @@ const Routes = epitath(function*({ change, inverted }) {
   return (
     <Switch>
       {pages.map(page => {
-        if (page._type === "example") {
+        if (!page.path) {
+          console.log("Error page had no slug/path defined.", page)
+          return null
+        } else if (page._type === "example") {
           return (
             <Route
               key={page._id}
